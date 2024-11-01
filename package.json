@@ -23,6 +23,7 @@
 		"astro-icon": "^1.1.0",
 		"clsx": "^2.1.0",
 		"firebase": "^11.0.1",
+		"firebase-tools": "^13.23.1",
 		"mdast-util-to-string": "^4.0.0",
 		"reading-time": "^1.5.0",
 		"rehype-external-links": "^3.0.0",
