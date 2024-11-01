@@ -5,12 +5,10 @@ import Card from '../components/Card.astro'
 import ProjectCard from '../components/ProjectCard.astro'
 import Label from '../components/Label.astro'
 import SkillLayout from '../components/SkillLayout.astro'
-import PostPreview from '@/components/blog/PostPreview.astro'
 
 import { Image } from 'astro:assets'
 import profile from '../images/profile-picture.jpeg'
 
-import { getAllPosts, sortMDByDate } from '@/utils'
 
 const languages = ['Spanish', 'English']
 const frontend = ['React', 'NextJS', 'Astro', 'VueJS']
@@ -19,9 +17,6 @@ const dbs = ['PostgreSQL', 'MongoDB']
 const others = ['AWS', 'Docker', 'Shopify', 'Redis', 'Jira']
 
 
-const MAX_POSTS = 10
-const allPosts = await getAllPosts()
-const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 ---
 
 <PageLayout meta={{ title: 'Home' }}>
@@ -116,19 +111,6 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 				allowing me to seamlessly integrate and innovate across diverse technology stacks.
 			</p>
 		</Section>
-		{
-			allPostsByDate.length > 0 && (
-				<Section title='Posts'>
-					<ul class='flex flex-col gap-y-2'>
-						{allPostsByDate.map((p) => (
-							<li class='flex flex-col gap-x-2 sm:flex-row'>
-								<PostPreview post={p} />
-							</li>
-						))}
-					</ul>
-				</Section>
-			)
-		}
 
 		<Section title='Experience'>
 			<Card
