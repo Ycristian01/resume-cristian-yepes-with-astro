@@ -1,9 +1,8 @@
-const { getDataConnect, validateArgs } = require('firebase/data-connect');
-
 const connectorConfig = {
   connector: 'default',
   service: 'resume-cristian-yepes',
   location: 'us-central1'
 };
-exports.connectorConfig = connectorConfig;
+const _connectorConfig = connectorConfig;
+export { _connectorConfig as connectorConfig };
 
